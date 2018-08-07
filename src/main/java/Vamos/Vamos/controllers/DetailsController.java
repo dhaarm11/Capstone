@@ -12,6 +12,9 @@ public class DetailsController {
 
     @RequestMapping({"search"})
     public String index(Model model) {
+
+
+
         return "search";
     }
 }
