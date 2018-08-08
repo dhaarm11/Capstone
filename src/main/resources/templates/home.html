@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
@@ -37,4 +38,44 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body>
+
+<nav th:replace="fragments :: navbar"></nav>
+
+<div class="bg"></div>
+
+<p class="py-5 text-center">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+
+
+<div class="container text-center">
+    <a href="/login">Login</a> |
+    <a href="/signup">Create An Account</a>
+</div>
+
+<div class="container text-center">
+    <div class="dropdown"> Let's
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ...
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Catch a Game</a>
+            <a class="dropdown-item" href="#">Relax on a Beach</a>
+            <a class="dropdown-item" href="#">Go For a Hike</a>
+        </div>
+    </div>
+</div>
+
+
+<script th:replace="fragments :: jQuery"></script>
+<script th:replace="fragments :: Popper"></script>
+<script th:replace="fragments :: Bootstrap"></script>
+
+</body>
+
+>>>>>>> 13c6c43dcb55c5de08e683019dcf66c921966fe6
 </html>
