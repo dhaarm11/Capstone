@@ -1,19 +1,15 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
-<body>
 
 <nav th:replace="fragments :: navbar"></nav>
-
-<div class="bg"></div>
-
+<body class="container text-center col-md-12" background="https://lh3.googleusercontent.com/6y5kmJtP_vOcvdzlgbmdLv9UoMP2v3nC5OmnaJNv3OyEwp_K1MNT2j0oXxsQ8v7Ec9u88JZ3x4cnaivSQ2v5ObUpXepHpr2BfIMiVLk8KjcUeaRm06pDnUrCBYaDuOlD4YMKaDlLVlOyybVcwOsG5GzIgDU-71o8CoTU9CrCvnQHicZLQZYjwt9AxJsD-B0uI8mdwEVVFmpfoDaTQ10RD5K_8HbgiMcbTo6ac0cB536ilEQv8wI2UxDueK3tNLHbHiQ5eS0rzLK8UM2JsSYCJNgUFUpMJHTKcgQhTFA2GRzS5Ec5BBeJDlNli87eLKMjxcRTSVsihqMSTr-PcELR553XxM82p7l6_rwuDsGiDfxhHugemGxyjdXDqktGY8klrgrDYbMokvKAnXXqeo0SEHm6TIkmerDmLbS1zSXn0q7_Tk8NJt0HeF0-tEy0YaQiH61B-LNLuhzBSNsSMbH8I7d4wh83LvY1Z8e-EOP0h-Og-tHKiqrQu9v3pI_BR5bqw9B1AAGqPtQ3gtSuvvO8-A-BWIvlI5UdIEMKDc4dYVWckEMWdCPYBMM-0tu5TLpxKWmHBIkcjpk9RPiWedFMsls582I5pBny5g9WCQ=w982-h654-no">
 <br/>
 
 <div class="container text-center">
-    <a class="btn btn-primary" href="/login">Login</a> |
-    <a class="btn btn-primary" href="/signup">Create An Account</a>
+    <a class="btn btn-primary" href="/login">Log In</a> |
+    <a class="btn btn-primary" href="/signup">Sign Up</a>
 </div>
 
 <div class="container text-center">Or</div>
@@ -24,13 +20,12 @@
             Skip All This and Get To It! Let's...
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Catch a Game</a>
-            <a class="dropdown-item" href="#">Relax on a Beach</a>
-            <a class="dropdown-item" href="#">Go For a Hike</a>
+            <a class="dropdown-item" href="/">Catch a Game</a>
+            <a class="dropdown-item" href="/">Relax on a Beach</a>
+            <a class="dropdown-item" href="/">Go For a Hike</a>
         </div>
     </div>
 </div>
-
 
 <script th:replace="fragments :: jQuery"></script>
 <script th:replace="fragments :: Popper"></script>
@@ -38,44 +33,4 @@
 
 </body>
 
-=======
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-
-<body>
-
-<nav th:replace="fragments :: navbar"></nav>
-
-<div class="bg"></div>
-
-<p class="py-5 text-center">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
-
-
-<div class="container text-center">
-    <a href="/login">Login</a> |
-    <a href="/signup">Create An Account</a>
-</div>
-
-<div class="container text-center">
-    <div class="dropdown"> Let's
-        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            ...
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Catch a Game</a>
-            <a class="dropdown-item" href="#">Relax on a Beach</a>
-            <a class="dropdown-item" href="#">Go For a Hike</a>
-        </div>
-    </div>
-</div>
-
-
-<script th:replace="fragments :: jQuery"></script>
-<script th:replace="fragments :: Popper"></script>
-<script th:replace="fragments :: Bootstrap"></script>
-
-</body>
-
->>>>>>> 13c6c43dcb55c5de08e683019dcf66c921966fe6
 </html>

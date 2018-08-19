@@ -5,18 +5,54 @@
 <body>
 
 <nav th:replace="fragments :: navbar"></nav>
+<h1 th:text="${title}">Default Title</h1>
 
-<div class="bg"></div>
+<br/>
 
-<p class="py-5 text-center">This example creates a full page background image. Try to resize the browser window to see how it always will cover the full screen (when scrolled to top), and that it scales nicely on all screen sizes.</p>
+<ul>
+    <li th:each="location : ${locations}" th:text="${location.name}"></li>
+</ul>
 
+<p th:unless="${locations.size()}"><i>No Locations Yet</i></p>
 
+<!--
+<script>
+    function initHome() {
+        var location = {63129};
+        var home = new dataservice.accuweather.com/locations/v1/postalcodes/search(
+
+    }
+</script>
+<script async defer src="http://dataservice.accuweather.com/locations/v1/cities/search?apikey=MIVE1vuESvaXmasgLJ1dd1W3wnFuKjXf&q&callback=initHome"></script>
+-->
 <div class="container text-center">
-    <a href="/login">Login</a> |
-    <a href="/signup">Create An Account</a>
+    <div class="btn-group btn-group-toggle text-center" data-toggle="buttons">
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="MLB" autocomplete="off" /> MLB
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="NBA" autocomplete="off" /> NBA
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="options" id="NHL" autocomplete="off" /> NHL
+        </label>
+    </div>
 </div>
 
-<div class="container text-center">
+<br/>
+
+<div class="container text-center col-md-4">
+    <form>
+        <div class="form-group text-center">
+            <label for="formControlRange">Miles Range</label>
+            <input type="range" min="1" max="5000" value="1000" class="form-control-range text-right" id="formControlRange"/>
+        </div>
+    </form>
+</div>
+
+<br/>
+
+<div class="container text-center"> Quick Search:
     <div class="dropdown"> Let's
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ...

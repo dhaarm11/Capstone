@@ -1,6 +1,7 @@
-<<<<<<< HEAD
 package Vamos.Vamos.controllers;
 
+import Vamos.Vamos.models.data.LocationDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,33 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping({""})
 public class DetailsController {
-    public DetailsController() {
-    }
+
+    @Autowired
+    private LocationDao locationDao;
 
     @RequestMapping({"search"})
     public String index(Model model) {
+            model.addAttribute("locations", locationDao.findAll());
+            model.addAttribute("title", "Search");
 
-
-
-        return "search";
-    }
+            return "search";
+        }
 }
-=======
-package Vamos.Vamos.controllers;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-@RequestMapping({""})
-public class DetailsController {
-    public DetailsController() {
-    }
-
-    @RequestMapping({"search"})
-    public String index(Model model) {
-        return "search";
-    }
-}
->>>>>>> 13c6c43dcb55c5de08e683019dcf66c921966fe6
