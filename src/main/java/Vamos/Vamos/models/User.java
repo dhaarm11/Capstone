@@ -9,4 +9,20 @@ public class User {
     @Id
     @GeneratedValue
     private int id;
+
+    private String username;
+
+    private String firstname;
+
+    private String lastname;
+
+    private String email;
+
+    private String password;
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
+
+
