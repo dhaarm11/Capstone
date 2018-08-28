@@ -10,11 +10,20 @@ public class Location {
     @Id
     @GeneratedValue
     private int id;
-    @NotNull
-    private String name;
 
-    public Location(String name) {
-        this.name = name;
+    @NotNull
+    private String attraction;
+
+    @NotNull
+    private String city;
+
+    @NotNull
+    private String classification;
+
+    public Location(String attraction, String city, String classification) {
+        this.attraction = attraction;
+        this.city = city;
+        this.classification = classification;
     }
 
     public Location() {
@@ -24,8 +33,13 @@ public class Location {
     public int getId() {
         return this.id;
     }
-
-    public String getName() {
-        return name;
+    public String getAttraction() {
+        return attraction;
+    }
+    public String getCity() {
+        return city;
+    }
+    public String getClassification() {
+        return classification;
     }
 }

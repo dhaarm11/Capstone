@@ -9,11 +9,26 @@
 
 <br/>
 
-<ul>
-    <li th:each="location : ${locations}" th:text="${location.name}"></li>
-</ul>
+<div>
+    <h3 th:text="${locations.size() + ' Result(s)'}"></h3>
 
-<p th:unless="${locations.size()}"><i>No Locations Yet</i></p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Attraction</th>
+            <th scope="col">City</th>
+            <th scope="col">Classification</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="location : ${locations}">
+            <td th:text="${location.attraction}"></td>
+            <td th:text="${location.city}"></td>
+            <td th:text="${location.classification}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 <!--
 <script>
@@ -25,6 +40,7 @@
 </script>
 <script async defer src="http://dataservice.accuweather.com/locations/v1/cities/search?apikey=MIVE1vuESvaXmasgLJ1dd1W3wnFuKjXf&q&callback=initHome"></script>
 -->
+
 <div class="container text-center">
     <div class="btn-group btn-group-toggle text-center" data-toggle="buttons">
         <label class="btn btn-primary">
@@ -44,11 +60,21 @@
 <div class="container text-center col-md-4">
     <form>
         <div class="form-group text-center">
-            <label for="formControlRange">Miles Range</label>
+            <label for="formControlRange">Miles Range: <span id="demo"></span></label>
             <input type="range" min="1" max="5000" value="1000" class="form-control-range text-right" id="formControlRange"/>
         </div>
     </form>
 </div>
+
+<script>
+    var slider = document.getElementById("formControlRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+</script>
 
 <br/>
 
@@ -65,6 +91,7 @@
     </div>
 </div>
 
+<br/>
 
 <script th:replace="fragments :: jQuery"></script>
 <script th:replace="fragments :: Popper"></script>
