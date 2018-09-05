@@ -18,6 +18,9 @@
             <th scope="col">Attraction</th>
             <th scope="col">City</th>
             <th scope="col">Classification</th>
+            <th scope="col">SubCategory</th>
+            <th scope="col">Add</th>
+            <th scope="col">Ignore</th>
         </tr>
         </thead>
         <tbody>
@@ -25,6 +28,9 @@
             <td th:text="${location.attraction}"></td>
             <td th:text="${location.city}"></td>
             <td th:text="${location.classification}"></td>
+            <td th:text="${location.classification}"></td>
+            <td> <a href="dummy">Add to Wishlist</a></td>
+            <td> <a href="dummy">Not Interested</a></td>
         </tr>
         </tbody>
     </table>
@@ -40,17 +46,17 @@
 </script>
 <script async defer src="http://dataservice.accuweather.com/locations/v1/cities/search?apikey=MIVE1vuESvaXmasgLJ1dd1W3wnFuKjXf&q&callback=initHome"></script>
 -->
-
+<h3>Refine Search: </h3>
 <div class="container text-center">
-    <div class="btn-group btn-group-toggle text-center" data-toggle="buttons">
+    <div class="btn-group checkbox-inline text-center">
         <label class="btn btn-primary">
-            <input type="radio" name="options" id="MLB" autocomplete="off" /> MLB
+            <input data-toggle="toggle" type="checkbox" name="options" id="MLB" autocomplete="off" /> MLB
         </label>
         <label class="btn btn-primary">
-            <input type="radio" name="options" id="NBA" autocomplete="off" /> NBA
+            <input data-toggle="toggle" type="checkbox" name="options" id="NBA" autocomplete="off" /> NBA
         </label>
         <label class="btn btn-primary">
-            <input type="radio" name="options" id="NHL" autocomplete="off" /> NHL
+            <input data-toggle="toggle" type="checkbox" name="options" id="NHL" autocomplete="off" /> NHL
         </label>
     </div>
 </div>
@@ -77,7 +83,6 @@
 </script>
 
 <br/>
-
 <div class="container text-center"> Quick Search:
     <div class="dropdown"> Let's
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

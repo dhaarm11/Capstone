@@ -20,13 +20,13 @@ public class Location {
     @NotNull
     private String classification;
 
+    public Location() {
+    }
+
     public Location(String attraction, String city, String classification) {
         this.attraction = attraction;
         this.city = city;
         this.classification = classification;
-    }
-
-    public Location() {
     }
 
 
@@ -42,4 +42,5 @@ public class Location {
     public String getClassification() {
         return classification;
     }
+
 }

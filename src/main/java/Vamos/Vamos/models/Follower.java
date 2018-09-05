@@ -9,4 +9,5 @@ public class Follower {
     @Id
     @GeneratedValue
     private int id;
+
 }
