@@ -12,21 +12,30 @@ public class Location {
     private int id;
 
     @NotNull
-    private String attraction;
+    private String classification;
 
     @NotNull
     private String city;
 
     @NotNull
-    private String classification;
+    private String attraction;
+
+    @NotNull
+    private String category;
+
+    @NotNull
+    private String subcategory;
 
     public Location() {
     }
 
-    public Location(String attraction, String city, String classification) {
-        this.attraction = attraction;
-        this.city = city;
+    public Location(String classification, String city, String attraction,
+                    String category, String subcategory) {
         this.classification = classification;
+        this.city = city;
+        this.attraction = attraction;
+        this.category = category;
+        this.subcategory = subcategory;
     }
 
 
@@ -43,4 +52,31 @@ public class Location {
         return classification;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
+    }
+
+    public void setClassification(String classification) {
+        this.classification = classification;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setAttraction(String attraction) {
+        this.attraction = attraction;
+    }
 }

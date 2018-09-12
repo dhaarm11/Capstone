@@ -15,9 +15,9 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">Attraction</th>
             <th scope="col">City</th>
-            <th scope="col">Classification</th>
+            <th scope="col">Attraction</th>
+            <th scope="col">Category</th>
             <th scope="col">SubCategory</th>
             <th scope="col">Add</th>
             <th scope="col">Ignore</th>
@@ -25,10 +25,10 @@
         </thead>
         <tbody>
         <tr th:each="location : ${locations}">
+            <td> <a th:href="'/detail/' + ${location.city}" th:text="${location.city}">City</a></td>
             <td th:text="${location.attraction}"></td>
-            <td th:text="${location.city}"></td>
             <td th:text="${location.classification}"></td>
-            <td th:text="${location.classification}"></td>
+            <td th:text="${location.subcategory}"></td>
             <td> <a href="dummy">Add to Wishlist</a></td>
             <td> <a href="dummy">Not Interested</a></td>
         </tr>
@@ -46,35 +46,85 @@
 </script>
 <script async defer src="http://dataservice.accuweather.com/locations/v1/cities/search?apikey=MIVE1vuESvaXmasgLJ1dd1W3wnFuKjXf&q&callback=initHome"></script>
 -->
+
 <h3>Refine Search: </h3>
 <div class="container text-center">
     <div class="btn-group checkbox-inline text-center">
         <label class="btn btn-primary">
-            <input data-toggle="toggle" type="checkbox" name="options" id="MLB" autocomplete="off" /> MLB
+            <input data-toggle="toggle" type="checkbox" name="optionsA" id="MLB" autocomplete="off" /> MLB
         </label>
         <label class="btn btn-primary">
-            <input data-toggle="toggle" type="checkbox" name="options" id="NBA" autocomplete="off" /> NBA
+            <input data-toggle="toggle" type="checkbox" name="optionsA" id="NFL" autocomplete="off" /> NBA
         </label>
         <label class="btn btn-primary">
-            <input data-toggle="toggle" type="checkbox" name="options" id="NHL" autocomplete="off" /> NHL
+            <input data-toggle="toggle" type="checkbox" name="optionsA" id="NHL" autocomplete="off" /> NHL
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsA" id="NBA" autocomplete="off" /> NBA
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsA" id="WNBA" autocomplete="off" /> WNBA
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsA" id="MLS" autocomplete="off" /> MLS
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsA" id="NCAAF" autocomplete="off" /> NCAAF
         </label>
     </div>
 </div>
-
+<div class="container text-center">
+    <div class="btn-group checkbox-inline text-center">
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsB" id="Beach" autocomplete="off" /> Beach
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsB" id="Zoo" autocomplete="off" /> Zoo
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsB" id="Amusement Park" autocomplete="off" /> Amusement Park
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsB" id="Ski Resort" autocomplete="off" /> Ski Resort
+        </label>
+    </div>
+</div>
+<div class="container text-center">
+    <div class="btn-group checkbox-inline text-center">
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsC" id="National Park" autocomplete="off" /> National Park
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsC" id="National Monument" autocomplete="off" /> National Monument
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsC" id="Museum" autocomplete="off" /> Museum
+        </label>
+        <label class="btn btn-primary">
+            <input data-toggle="toggle" type="checkbox" name="optionsC" id="State Capital" autocomplete="off" /> State Capital
+        </label>
+    </div>
+</div>
 <br/>
 
 <div class="container text-center col-md-4">
     <form>
         <div class="form-group text-center">
-            <label for="formControlRange">Miles Range: <span id="demo"></span></label>
+            <label for="formControlRange">Miles Range: <span id="miles"></span></label>
             <input type="range" min="1" max="5000" value="1000" class="form-control-range text-right" id="formControlRange"/>
         </div>
+
+        <br/>
+        <br/>
+
+        <button type="submit" class="btn btn-primary btn-xs">Submit</button>
+
     </form>
 </div>
 
 <script>
     var slider = document.getElementById("formControlRange");
-    var output = document.getElementById("demo");
+    var output = document.getElementById("miles");
     output.innerHTML = slider.value;
 
     slider.oninput = function() {
@@ -83,16 +133,23 @@
 </script>
 
 <br/>
-<div class="container text-center"> Quick Search:
+
+<h3>Quick Search: </h3>
+<div class="form-group text-center">
     <div class="dropdown"> Let's
         <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             ...
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Catch a Game</a>
-            <a class="dropdown-item" href="#">Relax on a Beach</a>
-            <a class="dropdown-item" href="#">Go For a Hike</a>
+            <a class="dropdown-item" href="#">Seek Thrills</a>
+            <a class="dropdown-item" href="#">Learn Something</a>
         </div>
+
+        <br/>
+
+        <button type="submit" class="btn btn-secondary btn-xs">Submit</button>
+
     </div>
 </div>
 

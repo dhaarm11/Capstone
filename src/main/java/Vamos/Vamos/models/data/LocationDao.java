@@ -10,5 +10,6 @@ import java.util.List;
 @Transactional
 public interface LocationDao extends CrudRepository<Location, Integer> {
     List<Location> findAllByCity(String city);
-
+    List<Location> findAllByClassification(String classification);
+    List<Location> findAllBySubcategory (String subcategory);
 }
