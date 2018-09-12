@@ -22,11 +22,26 @@ public class DetailsController {
     public String index(Model model) {
             model.addAttribute("locations", locationDao.findAll());
             model.addAttribute("title", "Search");
-
             return "search";
         }
 
-    @RequestMapping(value = "search/{city}", method = RequestMethod.GET)
+    @RequestMapping(value = "search/{classification}", method = RequestMethod.GET)
+    public String getLocationsByCategory(@PathVariable("classification") String classification, Model model) {
+        List<Location> locations = locationDao.findAllByClassification(classification);
+        model.addAttribute("locations", locations);
+        model.addAttribute("title", "Search");
+        return "search";
+    }
+
+    @RequestMapping(value = "search/{classification}/{subcategory}", method = RequestMethod.GET)
+    public String getLocationsBySubcategory(@PathVariable("subcategory") String subcategory, Model model) {
+        List<Location> locations = locationDao.findAllBySubcategory(subcategory);
+        model.addAttribute("locations", locations);
+        model.addAttribute("title", "Search");
+        return "search";
+    }
+
+    @RequestMapping(value = "/detail/{city}", method = RequestMethod.GET)
     public String getLocationsByCity(@PathVariable("city") String city, Model model) {
         List<Location> locations = locationDao.findAllByCity(city);
         model.addAttribute("locations", locations);
